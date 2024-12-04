@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Josefin Sans", serif;
 }
 
 li {
@@ -12,17 +17,18 @@ a {
     color: white;
     text-decoration: none;
 }
+
+h2 {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 40px;
+}
+
 .headerContenu {
     width: 40%;
     position: absolute;
     top: 50%;
     transform: translate(50%,-50%);
-}
-.boutonReserver {
-    position: absolute;
-    top: 50%;
-    right: 110px;
-    transform: translate(50%,-50%);
+    font-size: 18px;
 }
 
 .flex {
@@ -46,14 +52,15 @@ a {
 
 Header {
     background-color: black;
-    position:sticky;
+    position:fixed ;
+    z-index: 1;
     width: 100%;
 }
 
 .hero{
     height: 100vh;
     width: 100vw;
-    background-image: url(assets/hero_bg_temp.png);
+    background-image: url(assets/hero_bg.png);
     background-position: center;
     background-size: cover;
     color: white;
@@ -64,3 +71,26 @@ Header {
     top: 50%;
     transform: translate(50%,-50%);
 }
+
+.btn {
+    padding: 0.9em 1.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    border: 4px solid red;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 110px;
+    transform: translate(50%,-50%);
+    font-weight: 800;
+  }
+  
+  .glow {
+    -webkit-box-shadow:0px 0px 41px 6px rgba(255,46,46,0.9);
+    -moz-box-shadow: 0px 0px 41px 6px rgba(255,46,46,0.9);
+    box-shadow: 0px 0px 41px 6px rgba(255,46,46,0.9);
+  }
