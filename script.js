@@ -38,13 +38,15 @@ function affiche(infos){
         let nomActivite = info.nom
         let description = info.description
         let images = info.imageurl
-        activity += `<div>
+        activity += `<div class="card container flex">
+                 <div>
                     <img src="${images}" alt="">
                     <h3>${nomActivite}</h3>
                 </div>
                 <div>
                     <h4>Description : </h4>
                     <p>${description}</p>
+                </div>
                 </div>` 
     });
 
@@ -69,7 +71,7 @@ function affiche(infos){
     document.querySelector("#activites").innerHTML += 
     `
     <h3>Activités</h3>
-                <div>
+                <div class="actCard">
                     ${activity}
                 </div>
     `
