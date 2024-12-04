@@ -39,15 +39,18 @@ function affiche(infos){
         let description = info.description
         let images = info.imageurl
         activity += `<div class="card container flex">
-                 <div>
-                    <img src="${images}" alt="">
-                    <h3>${nomActivite}</h3>
-                </div>
-                <div>
-                    <h4>Description : </h4>
+                 <div class="image-container">
+                    <img src="${images}" alt="Image de l'activité ${nomActivite}">
+                    <h3 class="glow">${nomActivite}</h3>
+                 </div>
+                 <div class="description">
+                    <h4>L'activité : </h4>
                     <p>${description}</p>
-                </div>
-                </div>` 
+                    <a href="" title="Bouton vers l'activité    " class="btnInfos">En savoir plus</a>
+                 </div>
+            </div>`;
+
+
     });
 
     //// On boucle sur chaque temoignage et on l'injecte dans le Dom
