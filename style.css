@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+.headerContenu {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%,-50%);
+}
+.boutonReserver {
+    position: absolute;
+    top: 50%;
+    right: 110px;
+    transform: translate(50%,-50%);
+}
+
 .flex {
     display: flex;
     flex-wrap: wrap;
@@ -12,4 +33,34 @@
 .container {
     max-width: 1000px;
     margin: auto;
+}
+
+.space {
+    justify-content: space-between;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+Header {
+    background-color: black;
+    position:sticky;
+    width: 100%;
+}
+
+.hero{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(assets/hero_bg_temp.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+.contenuHero {
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    transform: translate(50%,-50%);
 }

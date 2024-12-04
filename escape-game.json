@@ -11,17 +11,17 @@
     {
       "nom": "Mystère du Manoir",
       "description": "Explorez un manoir mystérieux rempli d'énigmes et de mystères. Parviendrez-vous à résoudre les énigmes et à vous échapper avant que le temps ne s'écoule ?",
-      "image-url": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/mystere-du-manoir.webp"
+      "imageurl": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/mystere-du-manoir.webp"
     },
     {
       "nom": "Évasion dans l'Espace",
       "description": "Voyagez dans l'espace et relevez des défis intergalactiques. Une aventure cosmique qui mettra à l'épreuve votre esprit d'équipe et votre ingéniosité.",
-      "image-url": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/evasion-dans-l-espace.webp"
+      "imageurl": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/evasion-dans-l-espace.webp"
     },
     {
       "nom": "Mission Secrète: Paris",
       "description": "Plongez dans une mission secrète au cœur de Paris. Résolvez des énigmes pour déjouer les complots et accomplir votre mission dans la Ville Lumière.",
-      "image-url": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/mission-secrete-paris.webp"
+      "imageurl": "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/images/escape-game/mission-secrete-paris.webp"
     }
   ],
   "temoignages": [
