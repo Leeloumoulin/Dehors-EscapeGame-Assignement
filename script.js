@@ -1,12 +1,12 @@
 
 
 fetch('escape-game.json')
-.then((rep) =>
-    rep.json())
-.then(informations => {
-    // Affiche les données
-    affiche(informations);
-});
+    .then((rep) =>
+        rep.json())
+    .then(informations => {
+        // Affiche les données
+        affiche(informations);
+    });
 
 // Rôle : Afficher une donnée dans la page HTML 
 // Paramètre : "infos", 
@@ -16,7 +16,7 @@ fetch('escape-game.json')
 //on range chaque élément dans une variable
 //on boucle sur chaque étape à injecter + sur les sous catégories 
 
-function affiche(infos){
+function affiche(infos) {
     let titre = infos.nomCommercial
     let accroche = infos.phraseAccroche
     let appelAction = infos.texteAppelAction
@@ -34,7 +34,7 @@ function affiche(infos){
                         <p>${avantageClient}</p>
                     </div>`
     });
-//// On boucle sur chaque activité et on l'injecte dans le Dom
+    //// On boucle sur chaque activité et on l'injecte dans le Dom
     activite.forEach(info => {
         let nomActivite = info.nom
         let description = info.description
@@ -59,7 +59,7 @@ function affiche(infos){
         let experience = avis.typeExperience
         let commentaire = avis.commentaire
         let note = avis.note
-        avisclient +=`<div class="cardClient card-body"><!-- client-->
+        avisclient += `<div class="cardClient card-body"><!-- client-->
                     <div class="card-title">
                         <p>${prenom}</p>
                         <p><i class="fa-solid fa-star" style="color: white; width: 20px;"></i>${note}/5</p>
@@ -73,15 +73,15 @@ function affiche(infos){
 
 
     // On injecte les autres données dans le dom par section
-    document.querySelector("#activites").innerHTML += 
-    `
+    document.querySelector("#activites").innerHTML +=
+        `
     <h3>Activités</h3>
                 <div class="actCard">
                     ${activity}
                 </div>
     `
-    document.querySelector(".hero").innerHTML += 
-    `
+    document.querySelector(".hero").innerHTML +=
+        `
                 <section class="container">
                 <div class="contenuHero alignCenter">
                     <div>
@@ -93,8 +93,8 @@ function affiche(infos){
             </section>
     `
 
-        document.querySelector("#engagements").innerHTML +=
-         `
+    document.querySelector("#engagements").innerHTML +=
+        `
 
                 <div class="engageFlex space">
                     ${avantage}
@@ -102,12 +102,12 @@ function affiche(infos){
 
         `
 
-        document.querySelector("#avis").innerHTML +=
+    document.querySelector("#avis").innerHTML +=
         `
             <div class="flex gap space">
                 ${avisclient}
             </div>
 
         `
-        AOS.init();
+    AOS.init();
 }
