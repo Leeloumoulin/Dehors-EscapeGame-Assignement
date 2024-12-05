@@ -43,9 +43,9 @@ function affiche(infos){
                     <h4 class="glow">${nomActivite}</h4>
                  </div>
                  <div class="description">
-                    <h4>L'activité : </h4>
+                    <h4>L'activité: </h4>
                     <p>${description}</p>
-                    <a href="" title="Bouton vers l'activité    " class="btnInfos">En savoir plus</a>
+                    <a href="" title="Bouton vers l'activité" class="btnInfos" target="_blank">En savoir plus</a>
                  </div>
             </div>`;
 
@@ -86,7 +86,7 @@ function affiche(infos){
                         <h2 class="heroTxt">${titre}</h2>
                         <h1 class="heroTxt2">${accroche}</h1>
                     </div>
-                    <a href="" title="Bouton de réservation" class="btnInfos">${appelAction}</a>
+                    <a href="" title="Bouton de réservation" class="btnInfos" target="_blank">${appelAction}</a>
                 </div>
             </section>
     `
