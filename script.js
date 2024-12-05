@@ -1,3 +1,5 @@
+
+
 fetch('escape-game.json')
 .then((rep) =>
     rep.json())
@@ -37,7 +39,7 @@ function affiche(infos){
         let nomActivite = info.nom
         let description = info.description
         let images = info.imageurl
-        activity += `<div class="card container flex">
+        activity += `<div class="card container flex"  data-aos="fade-up-right">
                  <div class="image-container">
                     <img src="${images}" alt="Image de l'activité ${nomActivite}">
                     <h4 class="glow">${nomActivite}</h4>
@@ -107,4 +109,5 @@ function affiche(infos){
             </div>
 
         `
+        AOS.init();
 }

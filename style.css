@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@
   font-family: "Josefin Sans", serif;
   color: white;
 }
+
 
 body {
   background-color: black;
@@ -206,6 +208,9 @@ Header {
   margin-bottom: 50px;
   margin-top: 60px;
 }
+.actCard {
+  overflow: hidden;
+}
 
 .h80 {
   height: 80vh;
@@ -329,3 +334,4 @@ footer img {
   text-decoration:underline rgba(255, 255, 255, 0.322);
   text-align: center;
 }
+
