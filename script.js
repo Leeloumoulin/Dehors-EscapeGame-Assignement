@@ -28,8 +28,7 @@ function affiche(infos){
 
     // On boucle sur chaque avantage et on l'injecte dans le Dom
     avantages.forEach(avantageClient => {
-        avantage += `<div>
-                        <img src="" alt="">
+        avantage += `<div class="w30 avantage">
                         <p>${avantageClient}</p>
                     </div>`
     });
@@ -41,7 +40,7 @@ function affiche(infos){
         activity += `<div class="card container flex">
                  <div class="image-container">
                     <img src="${images}" alt="Image de l'activité ${nomActivite}">
-                    <h3 class="glow">${nomActivite}</h3>
+                    <h4 class="glow">${nomActivite}</h4>
                  </div>
                  <div class="description">
                     <h4>L'activité : </h4>
@@ -49,7 +48,6 @@ function affiche(infos){
                     <a href="" title="Bouton vers l'activité    " class="btnInfos">En savoir plus</a>
                  </div>
             </div>`;
-
 
     });
 
@@ -83,24 +81,20 @@ function affiche(infos){
                 <section class="container">
                 <div class="contenuHero">
                     <div>
-                        <h2>${titre}</h2>
-                        <h1>${accroche}</h1>
+                        <h2 class="heroTxt">${titre}</h2>
+                        <h1 class="heroTxt2">${accroche}</h1>
                     </div>
-                    <a href="" title="Bouton de réservation">${appelAction}</a>
+                    <a href="" title="Bouton de réservation" class="btnInfos">${appelAction}</a>
                 </div>
             </section>
     `
 
         document.querySelector("#engagements").innerHTML +=
          `
-            <h3>Nos engagements</h3>
-            <div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate suscipit eveniet quam totam vitae
-                    modi voluptatibus animi.</p>
-                <div>
+
+                <div class="engageFlex space">
                     ${avantage}
                 </div>
-            </div>
 
         `
 
