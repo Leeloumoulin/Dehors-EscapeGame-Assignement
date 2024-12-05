@@ -57,13 +57,15 @@ function affiche(infos){
         let experience = avis.typeExperience
         let commentaire = avis.commentaire
         let note = avis.note
-        avisclient +=`<div><!-- client 1-->
-                    <div>
+        avisclient +=`<div class="cardClient card-body"><!-- client-->
+                    <div class="card-title">
                         <p>${prenom}</p>
-                        <p><i class="fa-solid fa-star" style="color: #000000;"></i>${note}/5</p>
+                        <p><i class="fa-solid fa-star" style="color: white; width: 20px;"></i>${note}/5</p>
                     </div>
-                    <p>${experience}</p>
+                    <div class="card-text">
+                    <p class="exp">${experience}</p>
                     <p>${commentaire}</p>
+                    </div>
                 </div>`
     });
 
@@ -79,7 +81,7 @@ function affiche(infos){
     document.querySelector(".hero").innerHTML += 
     `
                 <section class="container">
-                <div class="contenuHero">
+                <div class="contenuHero alignCenter">
                     <div>
                         <h2 class="heroTxt">${titre}</h2>
                         <h1 class="heroTxt2">${accroche}</h1>
@@ -100,8 +102,7 @@ function affiche(infos){
 
         document.querySelector("#avis").innerHTML +=
         `
-            <h3>Avis clients</h3>
-            <div>
+            <div class="flex gap space">
                 ${avisclient}
             </div>
 
