@@ -1,113 +1,105 @@
-
-
+// Étape 1: Charger les données à partir du fichier JSON
+// Utiliser la méthode fetch pour récupérer le fichier "escape-game.json"
 fetch('escape-game.json')
-    .then((rep) =>
-        rep.json())
-    .then(informations => {
-        // Affiche les données
+    .then((rep) => // Lorsque la réponse est reçue
+        rep.json()) // Convertir la réponse en JSON
+    .then(informations => { // Lorsque les données JSON sont prêtes
+        // Appeler la fonction affiche() avec les données récupérées
         affiche(informations);
     });
 
-// Rôle : Afficher une donnée dans la page HTML 
-// Paramètre : "infos", 
-// Retour : Cette fonction ne retourne rien (elle effectue des manipulations DOM)
-
-
-//on range chaque élément dans une variable
-//on boucle sur chaque étape à injecter + sur les sous catégories 
-
+// Étape 2: Définir la fonction pour afficher les données dans la page HTML
 function affiche(infos) {
-    let titre = infos.nomCommercial
-    let accroche = infos.phraseAccroche
-    let appelAction = infos.texteAppelAction
-    let avantages = infos.avantagesClients
-    let activite = infos.activites
-    let temoignages = infos.temoignages
-    let avisclient = ""
-    let activity = ""
-    let avantage = ""
+    // Récupérer les données de l'objet JSON
+    titre = infos.nomCommercial
+    accroche = infos.phraseAccroche
+    appelAction = infos.texteAppelAction
+    avantages = infos.avantagesClients
+    activite = infos.activites
+    temoignages = infos.temoignages
 
+    // Initialiser les variables pour stocker les sections HTML à injecter
+    avisclient = ""
+    activity = ""
+    avantage = ""
 
-    // On boucle sur chaque avantage et on l'injecte dans le Dom
+    // Étape 3: Générer les avantages clients
+    // Boucler sur chaque avantage et ajouter un élément HTML pour chaque avantage
     avantages.forEach(avantageClient => {
+        // Ajouter chaque avantage dans la variable 'avantage'
         avantage += `<div class="w30 avantage">
                         <p>${avantageClient}</p>
                     </div>`
     });
-    //// On boucle sur chaque activité et on l'injecte dans le Dom
+
+    // Étape 4: Générer les activités
+    // Boucler sur chaque activité et ajouter un élément HTML pour chaque activité
     activite.forEach(info => {
-        let nomActivite = info.nom
-        let description = info.description
-        let images = info.imageurl
-        activity += `<div class="card container flex"  data-aos="fade-up-right">
-                 <div class="image-container">
-                    <img src="${images}" alt="Image de l'activité ${nomActivite}">
-                    <h4 class="glow">${nomActivite}</h4>
-                 </div>
-                 <div class="description">
-                    <h4>L'activité: </h4>
-                    <p>${description}</p>
-                    <a href="" title="Bouton vers l'activité" class="btnInfos" target="_blank">En savoir plus</a>
-                 </div>
-            </div>`;
-
+        nomActivite = info.nom
+        description = info.description
+        images = info.imageurl
+        activity += `<div class="card container flex" data-aos="fade-up-right">
+                        <div class="image-container">
+                            <img src="${images}" alt="Image de l'activité ${nomActivite}">
+                            <h4 class="glow">${nomActivite}</h4>
+                        </div>
+                        <div class="description">
+                            <h4>L'activité:</h4>
+                            <p>${description}</p>
+                            <a href="" title="Bouton vers l'activité" class="btnInfos" target="_blank">En savoir plus</a>
+                        </div>
+                    </div>`;
     });
 
-    //// On boucle sur chaque temoignage et on l'injecte dans le Dom
+    // Étape 5: Générer les témoignages
+    // Boucler sur chaque témoignage et ajouter un élément HTML pour chaque témoignage
     temoignages.forEach(avis => {
-        let prenom = avis.prenom
-        let experience = avis.typeExperience
-        let commentaire = avis.commentaire
-        let note = avis.note
-        avisclient += `<div class="cardClient card-body"><!-- client-->
-                    <div class="card-title">
-                        <p>${prenom}</p>
-                        <p><i class="fa-solid fa-star" style="color: white; width: 20px;"></i>${note}/5</p>
-                    </div>
-                    <div class="card-text">
-                    <p class="exp">${experience}</p>
-                    <p>${commentaire}</p>
-                    </div>
-                </div>`
+        prenom = avis.prenom
+        experience = avis.typeExperience
+        commentaire = avis.commentaire
+        note = avis.note
+        avisclient += `<div class="cardClient card-body">
+                        <div class="card-title">
+                            <p>${prenom}</p>
+                            <p><i class="fa-solid fa-star" style="color: white;"></i>${note}/5</p>
+                        </div>
+                        <div class="card-text">
+                            <p class="exp">${experience}</p>
+                            <p>${commentaire}</p>
+                        </div>
+                    </div>`;
     });
 
+    // Étape 6: Injecter les données dans le DOM
+    // Injecter les activités, la section hero, les avantages et les avis dans leurs sections respectives du DOM
 
-    // On injecte les autres données dans le dom par section
     document.querySelector("#activites").innerHTML +=
-        `
-    <h3>Activités</h3>
-                <div class="actCard">
-                    ${activity}
-                </div>
-    `
+        `<h3>Activités</h3>
+         <div class="actCard">
+            ${activity}
+         </div>`;
+
     document.querySelector(".hero").innerHTML +=
-        `
-                <section class="container">
-                <div class="contenuHero alignCenter">
-                    <div>
-                        <h2 class="heroTxt">${titre}</h2>
-                        <h1 class="heroTxt2">${accroche}</h1>
-                    </div>
-                    <a href="" title="Bouton de réservation" class="btnInfos" target="_blank">${appelAction}</a>
+        `<section class="container">
+            <div class="contenuHero alignCenter">
+                <div>
+                    <h2 class="heroTxt">${titre}</h2>
+                    <h1 class="heroTxt2">${accroche}</h1>
                 </div>
-            </section>
-    `
+                <a href="" title="Bouton de réservation" class="btnInfos" target="_blank">${appelAction}</a>
+            </div>
+        </section>`;
 
     document.querySelector("#engagements").innerHTML +=
-        `
-
-                <div class="engageFlex space">
-                    ${avantage}
-                </div>
-
-        `
+        `<div class="engageFlex space">
+            ${avantage}
+        </div>`;
 
     document.querySelector("#avis").innerHTML +=
-        `
-            <div class="flex gap space">
-                ${avisclient}
-            </div>
+        `<div class="flex gap space">
+            ${avisclient}
+        </div>`;
 
-        `
+    // Initialiser les animations avec AOS
     AOS.init();
 }
